@@ -1,0 +1,127 @@
+﻿<UserControl x:Class="Food_Recipe.CategoryList"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Food_Recipe"
+             mc:Ignorable="d"
+             Name="categoryListUC"
+             d:DesignHeight="700" d:DesignWidth="1090" Loaded="UserControl_Loaded">
+    <UserControl.Resources>
+        <local:ImagePatchConverter x:Key="ImagePatchConverter"/>
+    </UserControl.Resources>
+
+
+    <Grid Background="LightBlue">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="50"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="220"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <!--Cac mon hot deal-->
+            <!--Tim kiem-->
+            <!--Category List-->
+        </Grid.RowDefinitions>
+
+        <Button Content="Import" Name="ImportExcelBtn" Click="ImportExcelBtn_Click" FontSize="20" Grid.Column="1" Margin="735,10,107,5"/>
+
+        <!--Load Excel To ListView Button-->
+        <Button Content="Load" Name="LoadExcelBtn" FontSize="20" Click="LoadExcelBtn_Click" Margin="892,10,0,5" Grid.Column="1" Grid.ColumnSpan="2"/>
+
+        <!--Cac mon hot deal-->
+        <StackPanel Grid.Column="1" Grid.Row="1">
+            <TextBlock Text=">>Các sản phẩm được ưa thích" FontWeight="Bold" FontSize="21" Padding="10, 5, 0, 0" Height="40"/>
+            <ListView Height="180" Width="990" Name="favorProductListView" Background="{x:Null}" BorderThickness="0">
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel/>
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Border Background="LightGray" Width="430" Height="150" BorderThickness="2" CornerRadius="10">
+                            <StackPanel Width="430" Height="150" Orientation="Horizontal">
+                                <Image Source="{Binding ProductImage, Converter={StaticResource ImagePatchConverter}}" Height="150" Width="150"/>
+                                <StackPanel Width="230" Height="130">
+                                    <TextBlock Height="30" Width="230" Text="{Binding ProductName}" FontSize="25" TextAlignment="Center" FontFamily="Segou UI" FontWeight="Bold" Padding="0, 2, 0, 0"/>
+                                    <TextBlock Height="100" Width="230" Text="{Binding ProductDescription}" FontSize="16" TextAlignment="Left" Padding="10, 5, 5, 5" TextWrapping="Wrap"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel>
+
+        
+
+        <!--Cac category-->
+        <TextBlock Text="Category" FontSize="45" FontWeight="Bold" HorizontalAlignment="Center" Grid.Column="1" Height="60" Width="200" Grid.Row="2" Margin="402,9,388,361" Grid.RowSpan="2"/>
+
+        <ListView Grid.Column="1" Grid.Row="3" Name="categoryListView" Margin="123,24,111,0" BorderThickness="0">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Width="160" Height="160" Grid.Column="1" Grid.Row="3" Background="LightGray">
+                        <StackPanel.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="Add Product" Name="AddProductBtn" Click="AddProductBtn_Click"/>
+                                <MenuItem Header="Edit" Name="EditBtn" Click="EditBtn_Click"/>
+                                <MenuItem Header="Delete" Name="DeleteBtn" Click="DeleteBtn_Click"/>
+                            </ContextMenu>
+                        </StackPanel.ContextMenu>
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal" Height="20">
+                                <Border CornerRadius="50"
+                                        Width="20"
+                                        Height="20"
+                                        HorizontalAlignment="Left"
+                                        Margin="5, 0, 0, 0"
+                                        Background="White"
+                                        BorderBrush="Black"
+                                        BorderThickness="1">
+                                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" FontSize="13" Text="{Binding TotalProductInCate}" Width="20"/>
+                                </Border>
+                                <Label Width="100"/>
+                                <Button Name="categoryItemBtn"
+                                        Click="CategoryItemBtn_Click"
+                                        Width="20"
+                                        Height="20"
+                                        HorizontalAlignment="Right"
+                                        Margin="5, 0, 0, 0"
+                                        Background="White"
+                                        BorderBrush="Black"
+                                        BorderThickness="1">
+                                    <Button.Resources>
+                                        <Style TargetType="Border">
+                                            <Setter Property="CornerRadius" Value="15"/>
+                                        </Style>
+                                    </Button.Resources>
+                                    <Image Source="Image\right-arrow.png" Width="10" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,4,3,4" Height="10"/>
+                                </Button>
+                            </StackPanel>
+                            <Image Source="{Binding CategoryImage, Converter={StaticResource ImagePatchConverter}}" Height="86" Width="156"/>
+                            <TextBlock Text="{Binding CategoryName}" FontSize="20" TextAlignment="Center" Height="29"/>
+                        </StackPanel>
+                        
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+
+
+
+    </Grid>
+</UserControl>

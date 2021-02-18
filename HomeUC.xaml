@@ -1,0 +1,102 @@
+﻿<UserControl x:Class="Food_Recipe.HomeUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Food_Recipe"
+             mc:Ignorable="d" 
+             d:DesignHeight="650" d:DesignWidth="1090" Loaded="UserControl_Loaded">
+    <UserControl.Resources>
+        <local:ImagePatchConverter x:Key="ImagePatchConverter"/>
+    </UserControl.Resources>
+    <Grid Background="LightGray" Height="650" VerticalAlignment="Top">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="401*"/>
+            <RowDefinition Height="250*"/>
+        </Grid.RowDefinitions>
+        <!--<Grid.Background>
+            <ImageBrush ImageSource="Image/wallpaper_home.jpg"/>
+        </Grid.Background>-->
+        <!--Import Excel Button-->
+
+        <Button Width="60" Height="60" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,10" Name="returnBtn" Click="ReturnBtn_Click">
+            <Image Source="Image/left_arrow.png" RenderOptions.BitmapScalingMode="HighQuality"/>
+        </Button>
+
+        <!--Category Combobox-->
+        <ComboBox Visibility="Collapsed" FontSize="20" Name="categoryCombobox" Margin="144,28,678,318" SelectionChanged="CategoryCombobox_SelectionChanged">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding CategoryName}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+        <Button Visibility="Collapsed" Name="LoadBtn" Content="Load" Width="100" Height="30" Margin="705,52,285,318" Click="LoadBtn_Click"/>
+
+        <!--Product ListView-->
+        <ListView Name="productListView" Margin="10,97,10,57" BorderThickness="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Grid.RowSpan="2">
+
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <StackPanel.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="Edit" Name="EditBtn" Click="EditBtn_Click"/>
+                                <MenuItem Header="Delete" Name="DeleteBtn" Click="DeleteBtn_Click"/>
+                            </ContextMenu>
+                        </StackPanel.ContextMenu>
+                        <Border CornerRadius="10" Width="220" Height="260" BorderBrush="Gray" Background="LightGray" BorderThickness="2">
+                            <StackPanel Width="220" Height="270">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding Product_Quantity}" FontSize="20" TextAlignment="Center" Width="35" HorizontalAlignment="Right" Margin="0, 5, 10, 0" Background="White">
+                                        <TextBlock.Resources>
+                                            <Style TargetType="Border">
+                                                <Setter Property="CornerRadius" Value="50"/>
+                                            </Style>
+                                        </TextBlock.Resources>
+                                    </TextBlock>
+                                    <Label Width="130"/>
+                                    <Button Height="35" Name="addToFavorFoodBtn" Click="AddToFavorFoodBtn_Click" Width="35" HorizontalAlignment="Right" Margin="0, 5, 10, 0" BorderThickness="0">
+                                        <Image Source="Image\crystal_heart.png" RenderOptions.BitmapScalingMode="HighQuality"/>
+                                        <!--<Ellipse Width="30" Height="30">
+                                        <Ellipse.Fill>
+                                            <ImageBrush ImageSource="Image\crystal_heart.png"  x:Name="favorIcon" Stretch="Fill" RenderOptions.BitmapScalingMode="HighQuality"/>
+                                        </Ellipse.Fill>
+                                    </Ellipse>-->
+                                    </Button>
+                                </StackPanel>
+                                <Image Source="{Binding ProductImage, Converter={StaticResource ImagePatchConverter}}" Height="160"/>
+                                <StackPanel Height="60" Orientation="Horizontal">
+                                    <TextBlock Text="{Binding ProductName}" FontSize="20" Width="90" Margin="10, 0, 0 ,0" TextWrapping="Wrap" TextAlignment="Left"/>
+                                    <TextBlock Text="$" FontSize="20" TextAlignment="Right" Width="28"/>
+                                    <TextBlock Text="{Binding ProductPrice}" FontSize="20" TextAlignment="Left" Width="87"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+
+
+        <Button Content="Prev" FontSize="20" Name="PreviousBtn" Click="PreviousBtn_Click" Margin="285,198,653,17" Grid.Row="1"/>
+
+        <ComboBox Width="200" Name="pagingCombobox" SelectionChanged="PagingCombobox_SelectionChanged" Margin="466,198,424,17" Grid.Row="1">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Pages}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <Button Content="Next" FontSize="20" Name="NextBtn" Click="NextBtn_Click" Margin="716,198,222,17" Grid.Row="1"/>
+
+    </Grid>
+</UserControl>

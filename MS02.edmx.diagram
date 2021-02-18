@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c99283bfca904ff38d2bb60069cc4e8a" Name="Diagram1">
+        <EntityTypeShape EntityType="MS02Model.Category" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MS02Model.Customer" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MS02Model.Login" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MS02Model.Product" Width="1.5" PointX="3" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MS02Model.Purchase" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="MS02Model.PurchaseDetail" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="MS02Model.PurchaseStateEnum" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <AssociationConnector Association="MS02Model.FK_Product_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="MS02Model.FK_Purchase_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="MS02Model.FK_PurchaseDetail_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="MS02Model.FK_Purchase_PurchaseStateEnum" ManuallyRouted="false" />
+        <AssociationConnector Association="MS02Model.FK_PurchaseDetail_Purchase" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,54 @@
+﻿<Window x:Class="Food_Recipe.SplashScreenWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Food_Recipe"
+        mc:Ignorable="d"
+        Title="SplashScreenWindow" Height="462.556" Width="800" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
+    <Grid Margin="0,0,-22,-7">
+        <Grid.Background>
+            <ImageBrush ImageSource="/Image/background.jpg" Stretch="UniformToFill"/>
+        </Grid.Background>
+
+        <TextBlock 
+            Text="Welcome To Our Paradise"
+            Foreground="Black"
+            FontWeight="Bold"
+            TextWrapping="Wrap"
+            FontFamily="Olivia"
+            TextAlignment="Center"
+            FontSize="30" Margin="214,40,195.6,340"/>
+
+        <TextBlock
+            Text="{Binding}"
+            Padding="0,5,5,10"
+            TextAlignment="Center"
+            FontSize="16"
+            TextWrapping="Wrap"        
+            Foreground="Black" Margin="19,212,19,129"/>
+
+        <CheckBox Content="Không hiển thị cho lần truy cập sau"
+                  Foreground="White"
+                  FontSize="18"
+                  Margin="270,396,218.6,9.8"
+                  Checked="CheckBox_Checked"
+                  />
+
+        <Button
+            Background="Black" 
+            Margin="270,316,266.6,70.8"
+            Content="Get Started"
+            Foreground="White"
+            FontSize="25"
+            Name="NavigateHomeWindow"
+            Click="NavigateHomeWindow_Click"
+            FontWeight="Bold">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="30"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+    </Grid>
+</Window>

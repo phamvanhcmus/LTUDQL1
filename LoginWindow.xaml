@@ -1,0 +1,121 @@
+﻿<Window x:Class="Food_Recipe.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Food_Recipe"
+        mc:Ignorable="d"
+        Title="LoginWindow" 
+        Background="Transparent"
+        Height="450" Width="700" WindowStyle="None" WindowStartupLocation="CenterScreen">
+
+    <Grid Margin="0,-3,0,0" Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Image 
+            Grid.Column="0"
+            Source="Image/login_wallpaper.jpg" 
+            RenderOptions.BitmapScalingMode="HighQuality" Margin="-14,0,0,0"/>
+
+        <Canvas Grid.Column="1">
+            <Button 
+            Height="30"
+            Width="30"
+            Background="Transparent"
+            HorizontalAlignment="Right"
+            Canvas.Right="0"
+            VerticalAlignment="Top"
+            Grid.Column="1"
+            Name="exitBtn"
+            Click="ExitBtn_Click"
+            BorderThickness="0">
+                <Image Source="Image/exit.jpg" RenderOptions.BitmapScalingMode="HighQuality" RenderTransformOrigin="0.5,0.5"/>
+            </Button>
+
+            <TextBlock
+            Height="55"
+            Margin="22,40,280,350"
+            Text="Login"
+            TextAlignment="Center"
+            FontWeight="Bold"
+            FontSize="35" 
+            Grid.Column="1"/>
+
+            <Line StrokeThickness="3" Stroke="Black" X1="0" Y1="0" X2="320" Y2="0" Grid.Column="1" Width="320" Height="10" Margin="22,175,50,260"/>
+
+            <Label 
+            Name="userNameLabel"
+            Content="User Name"
+                Foreground="Gray"
+                FontStyle="Italic"
+                
+            Canvas.ZIndex ="999"
+            Padding="8,5"
+             FontSize="16"
+            Grid.Column="1"
+            Width="100" Canvas.Left="22" Canvas.Top="136" Height="34"/>
+
+            <TextBox
+                BorderThickness="0"
+            Name="userNameTextBox"
+            GotFocus="UserNameTextBox_GotFocus"
+            LostFocus="UserNameTextBox_LostFocus"
+            Height="55"
+            Width="320"
+            Margin="22,120,280,350"
+            Padding="10, 15"
+            FontSize="20"
+            TextAlignment="Left"
+            Grid.Column="1"/>
+
+            <Label 
+            Name="passwordLabel"
+            Content="Password"
+                FontStyle="Italic"
+                Foreground="Gray"
+            Canvas.ZIndex ="999"
+            Padding="8,5"
+             FontSize="16"
+            Grid.Column="1"
+            Width="100" Canvas.Left="22" Canvas.Top="227" Height="30"/>
+
+            <PasswordBox
+            BorderThickness="0"
+            Name="passwordTextBox"
+            GotFocus="PasswordTextBox_GotFocus"
+            LostFocus="PasswordTextBox_LostFocus"
+            Height="55"
+            Width="320"
+            FontWeight="Bold"
+            Padding="10, 15"
+            FontSize="16" 
+            Grid.Column="1" Canvas.Left="22" Canvas.Top="211"/>
+
+            <Line StrokeThickness="3" Stroke="Black" X1="0" Y1="0" X2="320" Y2="0" Grid.Column="1" Width="320" Height="10" Margin="22,266,50,169"/>
+
+            <CheckBox Content="Remember me" Grid.Column="1" Width="200" Height="25" FontSize="13" Margin="22,276,170,144"/>
+
+            <Button
+            FontSize="20"
+            Grid.Column="1"
+            Width="320" 
+            Height="50"
+            Margin="22,320,50,75"
+            Background="#3d3d45"
+            Foreground="White"
+            Name="LoginBtn"
+                Click="LoginBtn_Click"
+            Content="LOGIN">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="30"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </Canvas>
+    </Grid>
+
+</Window>

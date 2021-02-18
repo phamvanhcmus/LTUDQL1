@@ -1,0 +1,14 @@
+C:\Users\phamd\Desktop\MyShop (1)\MyShop\Source\obj\Release\Food_Recipe.csprojAssemblyReference.cache
+C:\Users\phamd\Desktop\MyShop (1)\MyShop\Source\obj\Release\AddProductUC.g.cs
+C:\Users\phamd\Desktop\MyShop (1)\MyShop\Source\obj\Release\CategoryList.g.cs
+C:\Users\phamd\Desktop\MyShop (1)\MyShop\Source\obj\Release\EditCategoryUC.g.cs
+C:\Users\phamd\Desktop\MyShop (1)\MyShop\Source\obj\Release\EditProductUC.g.cs
+C:\Users\phamd\Desktop\MyShop (1)\MyShop\Source\obj\Release\HomeUC.g.cs
+C:\Users\phamd\Desktop\MyShop (1)\MyShop\Source\obj\Release\LoginWindow.g.cs
+C:\Users\phamd\Desktop\MyShop (1)\MyShop\Source\obj\Release\MainWindow.g.cs
+C:\Users\phamd\Desktop\MyShop (1)\MyShop\Source\obj\Release\SplashScreenWindow.g.cs
+C:\Users\phamd\Desktop\MyShop (1)\MyShop\Source\obj\Release\App.g.cs
+C:\Users\phamd\Desktop\MyShop (1)\MyShop\Source\obj\Release\Food_Recipe_Content.g.cs
+C:\Users\phamd\Desktop\MyShop (1)\MyShop\Source\obj\Release\GeneratedInternalTypeHelper.g.cs
+C:\Users\phamd\Desktop\MyShop (1)\MyShop\Source\obj\Release\Food_Recipe_MarkupCompile.cache
+C:\Users\phamd\Desktop\MyShop (1)\MyShop\Source\obj\Release\Food_Recipe_MarkupCompile.lref
